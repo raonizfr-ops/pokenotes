@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-press-start: 'Press Start 2P', monospace;
+  --font-vt323: 'VT323', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-vt323);
+  background-color: #9BBC0F;
+  color: #0F380F;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .pixel-border {
+    border: 4px solid #0F380F;
+    border-style: solid;
+    box-shadow: 
+      inset -4px -4px 0px #8BAC0F,
+      inset 4px 4px 0px #0F380F,
+      -4px -4px 0px #0F380F,
+      4px 4px 0px #8BAC0F;
+  }
+
+  .pixel-border-inset {
+    border: 4px solid #0F380F;
+    box-shadow: 
+      inset 4px 4px 0px #0F380F,
+      inset -4px -4px 0px #8BAC0F;
+  }
+
+  .pixel-button {
+    border: 4px solid #0F380F;
+    box-shadow: 
+      inset -4px -4px 0px #8BAC0F,
+      inset 4px 4px 0px #0F380F,
+      -4px -4px 0px #0F380F,
+      4px 4px 0px #8BAC0F;
+    @apply bg-poke-red text-white font-press-start text-xs py-2 px-4 cursor-pointer;
+    transition: all 0.1s ease;
+    text-transform: uppercase;
+  }
+
+  .pixel-button:hover {
+    @apply bg-red-600;
+    transform: translate(2px, 2px);
+    box-shadow: 
+      inset -2px -2px 0px #8BAC0F,
+      inset 2px 2px 0px #0F380F,
+      -2px -2px 0px #0F380F,
+      2px 2px 0px #8BAC0F;
+  }
+
+  .pixel-button:active {
+    transform: translate(4px, 4px);
+    box-shadow: 
+      inset 2px 2px 0px #0F380F,
+      inset -2px -2px 0px #8BAC0F;
+  }
+
+  .pixel-card {
+    @apply pixel-border bg-gameboy-offwhite;
+  }
+
+  .pixel-input {
+    @apply pixel-border-inset bg-white font-vt323 text-lg p-2;
+    outline: none;
+  }
+
+  .pixel-input:focus {
+    @apply bg-yellow-50;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #8BAC0F;
+  border: 2px solid #0F380F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0F380F;
+  border: 2px solid #8BAC0F;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2F2F2F;
+}
+
+/* Markdown Styles */
+.prose {
+  @apply text-slate-gray;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply font-press-start text-slate-gray mt-4 mb-2;
+}
+
+.prose h1 {
+  @apply text-2xl;
+}
+
+.prose h2 {
+  @apply text-xl;
+}
+
+.prose h3 {
+  @apply text-lg;
+}
+
+.prose p {
+  @apply mb-4 font-vt323 text-lg;
+}
+
+.prose ul,
+.prose ol {
+  @apply mb-4 ml-6 font-vt323 text-lg;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose code {
+  @apply bg-gray-200 px-1 py-0.5 rounded font-mono text-sm;
+}
+
+.prose pre {
+  @apply bg-gray-200 p-4 rounded mb-4 overflow-x-auto;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-poke-red pl-4 italic my-4;
+}
+
+.prose a {
+  @apply text-poke-red underline;
+}
+
+.prose strong {
+  @apply font-bold;
+}
+
+.prose em {
+  @apply italic;
+}
+
+.prose img {
+  @apply max-w-full h-auto rounded;
+}
