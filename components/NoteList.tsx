@@ -29,7 +29,7 @@ export default function NoteList({ notes }: NoteListProps) {
     return (
       <div className="p-4 text-center">
         <p className="font-vt323 text-lg text-slate-gray">
-          Nenhuma nota encontrada
+          Nenhuma nota aqui ainda
         </p>
       </div>
     );

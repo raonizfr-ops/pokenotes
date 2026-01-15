@@ -55,7 +55,7 @@ export default function NoteEditor({ noteId }: NoteEditorProps) {
     return (
       <div className="h-full flex items-center justify-center bg-gameboy-offwhite">
         <p className="font-vt323 text-xl text-slate-gray">
-          Selecione uma agenda para começar
+          Selecione uma agenda
         </p>
       </div>
     );
@@ -159,7 +159,7 @@ export default function NoteEditor({ noteId }: NoteEditorProps) {
                       <MarkdownPreview content={content} />
                     ) : (
                       <p className="font-vt323 text-gray-400">
-                        Preview aparecerá aqui...
+                        Preview aparecerá aqui
                       </p>
                     )}
                   </div>
